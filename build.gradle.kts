@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.6.10"
+  kotlin("multiplatform") version "2.4.20"
 }
 
 repositories {
@@ -12,12 +12,20 @@ dependencies {
 }
 
 kotlin {
-    js(LEGACY) {
+    js {
         binaries.executable()
         browser {
             commonWebpackConfig {
-                cssSupport.enabled = true
+              cssSupport {
+                enabled.set(true)
+              }
             }
         }
+    }
+    sourceSets {
+            val jsMain by getting {
+                kotlin.srcDir("src/main/kotlin")
+                resources.srcDir("src/main/resources")
+            }
     }
 }

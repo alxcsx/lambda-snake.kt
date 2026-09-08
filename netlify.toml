@@ -1,0 +1,9 @@
+[build]
+  command = "./gradlew jsBrowserDistribution"
+  publish = "build/dist/js/productionExecutable"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions"

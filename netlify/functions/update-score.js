@@ -35,30 +35,52 @@ const DOMPurify = createDOMPurify(window);
  * @returns {Promise<NetlifyReturn>}
  */
 async function updateScore(event, context) {
-  const userData = JSON.parse(event.body)
-  
-  //Validation
+  const userData = JSON.parse(event.body);
+
+  // Validation
   const body = {
     name: DOMPurify.sanitize(userData.name),
-    score: Number.parseInt(userData.score.toString()) 
-  }
-  
-  
-  console.log(body.name)
-  
-  if(!body.name) throw new Error("missign parameter: name")
-  if(!body.score || isNaN(body.score)) throw new Error("missign parameter: score")
-  
-  await fetch('https://jsonbin.org/me/leaderboard', {
-    headers: { authorization: `token ${process.env.JSON_KEY}`},
-    method: "PATCH",
-    body: JSON.stringify(body)
-  }).catch(() => undefined)
-  
-  return {
-    statusCode: 200,
-    body: JSON.stringify({status: "success"})
+    score: Number.parseInt(userData.score?.toString()) 
+  };
+
+  console.log(body.name);
+
+  if (!body.name) throw new Error("missing parameter: name");
+  if (body.score === undefined || isNaN(body.score)) throw new Error("missing parameter: score");
+
+  const binUrl = 'https://api.jsonbin.io/v3/b/6a9f5a6cffd5d16053eb3e15';
+  const headers = { 
+    'X-Master-Key': `${process.env.JSON_KEY}`,
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    const getResponse = await fetch(binUrl, { method: "GET", headers });
+    if (!getResponse.ok) throw new Error("Failed to fetch current state");
+    
+    const getData = await getResponse.json();
+    
+    const currentList = Array.isArray(getData.record) ? getData.record : [];
+    currentList.push(body);
+
+    const putResponse = await fetch(binUrl, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify(currentList)
+    });
+
+    if (!putResponse.ok) throw new Error("Failed to save updated state");
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ status: "success" })
+    };
+    
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ status: "error", message: error.message })
+    };
   }
 }
-
 exports.handler = updateScore

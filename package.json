@@ -1,6 +1,6 @@
 {
   "name": "kotlinjs-snake-functions",
-  "repository": "https://github.com/Quote023/kotlinjs-snake.git",
+  "repository": "https://github.com/alxcsx/lambda-snake.kt.git",
   "dependencies": {
     "node-fetch": "2.6.6",
     "dompurify": "2.3.4",

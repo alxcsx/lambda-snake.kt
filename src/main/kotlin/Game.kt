@@ -10,7 +10,10 @@ import kotlin.math.max
 
 @Suppress("UNCHECKED_CAST")
 suspend fun main() {
-   val response = window.fetch("https://jsonbin.org/quote023/leaderboard").await()
+   val requestInit = obj<RequestInit> {}
+   requestInit.headers = obj()
+   requestInit.headers!!["X-Access-Key"] = "$2a$10$UpbxSm4HamRjrXLoEQVyNuVsfDYTzQnCMBhaYLlBBRdz7adICK7PC".toJsString()
+   val response = window.fetch("https://api.jsonbin.io/v3/b/6a9f5a6cffd5d16053eb3e15", requestInit).await()
    val ranking = if(response.ok) {
      response.json().await().let{
        if(it is Array<*>) it.toList() as List<RankingEntry>

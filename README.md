@@ -3,9 +3,9 @@
 ### Projeto da disciplina de Linguagem de Programação Funcional 2021.1 (jan/2022)
 
 ![image](https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)
-[![GitHub issues](https://img.shields.io/github/issues/Quote023/lambda-snake.kt)](https://github.com/Quote023/lambda-snake.kt/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Quote023/lambda-snake.kt)](https://github.com/Quote023/lambda-snake.kt/network)
-[![GitHub stars](https://img.shields.io/github/stars/Quote023/lambda-snake.kt)](https://github.com/Quote023/lambda-snake.kt/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/alxcsx/lambda-snake.kt)](https://github.com/alxcsx/lambda-snake.kt/issues)
+[![GitHub forks](https://img.shields.io/github/forks/alxcsx/lambda-snake.kt)](https://github.com/alxcsx/lambda-snake.kt/network)
+[![GitHub stars](https://img.shields.io/github/stars/alxcsx/lambda-snake.kt)](https://github.com/alxcsx/lambda-snake.kt/stargazers)
   
 
 ## 📄 Descrição 
@@ -27,8 +27,8 @@ Aqui estão as tecnologias usadas neste projeto.
 * Comunicação com servidor: Api Rest 
 ## 🦾 Serviços usados
 
-* [GitHub](https://github.com/Quote023/lambda-snake.kt)
-* [Gitpod](https://gitpod.io/#/github.com/Quote023/kotlinjs-snake)
+* [GitHub](https://github.com/alxcsx/lambda-snake.kt)
+* [Gitpod](https://gitpod.io/#/github.com/alxcsx/lambda-snake.kt)
 * [Netlify](https://www.netlify.com/)
 * [JSONbin](https://jsonbin.org/)  
 
@@ -40,7 +40,7 @@ Versão 1.0 OK
 ## 🖥️ Instalando e compilando o projeto do Jogo
 * Clone o projeto 
 ```bash 
-git clone https://github.com/Quote023/lambda-snake.kt 
+git clone https://github.com/alxcsx/lambda-snake.kt 
 ```
 * Para rodar o servidor de desenvolvimento com HOT-RELOAD use o comando 
 ```bash
@@ -54,7 +54,7 @@ será criada uma pasta ```/build/distributions/``` com os arquivos estáticos da
 
 
 ## 🖱️ Rodando o projeto através do GITPOD
-* Acesse o projeto no GITPOD [clicando aqui](https://gitpod.io/#/github.com/Quote023/kotlinjs-snake)
+* Acesse o projeto no GITPOD [clicando aqui](https://gitpod.io/#/github.com/alxcsx/lambda-snake.kt)
 * Com o Terminal na raiz do projeto execute o comando
 ```bash
 ./gradlew browserProductionRun
@@ -78,8 +78,8 @@ será criada uma pasta ```/build/distributions/``` com os arquivos estáticos da
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/Quote023">
-        <img src="https://github.com/Quote023.png" width="100px;" alt="Foto Alexandre Candido Souza"/><br>
+      <a href="https://github.com/alxcsx">
+        <img src="https://github.com/alxcsx.png" width="100px;" alt="Foto Alexandre Candido Souza"/><br>
         <sub>
           <b>Alexandre Candido Souza</b>
         </sub>
